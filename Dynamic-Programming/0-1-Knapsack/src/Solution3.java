@@ -29,9 +29,9 @@ public class Solution3 {
             }
         }
 
-        for(int i = 0; i <= C; i++) {
-            for(int j = 1; j < n; j++) {
-                //是否选择第j件物品
+        for(int j = 1; j < n; j++) {
+            //是否选择第j件物品
+            for(int i = 0; i <= C; i++) {
 
                 dp[j % 2][i] = dp[(j - 1) % 2][i]; //先假设不选第j件
                 if (i >= w[j]) {
@@ -46,6 +46,6 @@ public class Solution3 {
     public static void main(String[] args) {
         int[] w = new int[]{1, 2, 3};
         int[] v = new int[]{6, 10, 12};
-        System.out.println(new Solution2().knapsack01(w, v, 5));
+        System.out.println(new Solution3().knapsack01(w, v, 5));
     }
 }
