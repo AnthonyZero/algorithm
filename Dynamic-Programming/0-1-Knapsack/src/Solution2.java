@@ -27,14 +27,15 @@ public class Solution2 {
             }
         }
 
-        for(int i = 0; i <= C; i++) {
-            for(int j = 1; j < n; j++) {
-                //是否选择第j件物品
-
-                dp[j][i] = dp[j - 1][i]; //先假设不选第j件
-                if (i >= w[j]) {
-                    //当前容量能装下第j件物品 取两者最大值
-                    dp[j][i] = Math.max(dp[j][i], v[j] + dp[j - 1][i - w[j]]);
+        //是否选择第i件物品
+        for(int i = 1; i < n; i++) {
+            for (int j = 0; j <= C; j++) {
+                if (j >= w[i]) {
+                    //当前容量能装下第i件物品 取两者最大值 第i件选与不选
+                    dp[i][j] = Math.max(dp[i - 1][j], v[i] + dp[i - 1][j - w[i]]);
+                } else {
+                    // 装不下 只能继续看下一件
+                    dp[i][j] = dp[i - 1][j];
                 }
             }
         }
