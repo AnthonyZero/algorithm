@@ -15,26 +15,26 @@ import java.util.Arrays;
 public class InsertSort {
 
     //从小到大排序
-    public void sort(int[] arr) {
-        if(arr == null || arr.length <= 1) {
-            return;
-        }
-        //从第一个元素开始，前面的元素已经排好序了 每次循环完毕 前面的排序数组的大小逐渐增大到最后全部排序完
-        for(int i = 1; i < arr.length; i++) {
-            //找到前面已排序的结果中第一个比arr[i]小的元素，然后放在它后面
-            for(int j = i; j > 0; j--) {
-                //当前位置 把当前小的元素慢慢往前面移动 直到找到比他自己要小的元素 就退出当前循环结束，
-                if (arr[j] < arr[j - 1]) {
-                    //交换位置
-                    int temp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = temp;
-                } else {
-                    break;
-                }
-            }
-        }
-    }
+//    public void sort(int[] arr) {
+//        if(arr == null || arr.length <= 1) {
+//            return;
+//        }
+//        //从第一个元素开始，前面的元素已经排好序了 每次循环完毕 前面的排序数组的大小逐渐增大到最后全部排序完
+//        for(int i = 1; i < arr.length; i++) {
+//            //找到前面已排序的结果中第一个比arr[i]小的元素，然后放在它后面
+//            for(int j = i; j > 0; j--) {
+//                //当前位置 把当前小的元素慢慢往前面移动 直到找到比他自己要小的元素 就退出当前循环结束，
+//                if (arr[j] < arr[j - 1]) {
+//                    //交换位置
+//                    int temp = arr[j];
+//                    arr[j] = arr[j - 1];
+//                    arr[j - 1] = temp;
+//                } else {
+//                    break;
+//                }
+//            }
+//        }
+//    }
 
     //插入排序优化 优化前面交换操作所耗时，只找待插入的位置
     public void sortAdvance(int[] arr) {
