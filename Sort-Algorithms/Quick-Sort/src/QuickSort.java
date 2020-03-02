@@ -4,7 +4,7 @@ import java.util.Random;
 /**
  * 快速排序
  * 时间复杂度O(n*logn)  最好O(n*logn) 最坏O(n*n) 基准每次都是最左边递归树退化为链表
- * 空间复杂度O(logn)
+ * 空间复杂度O(logn) 在递归过程中产生的栈空间大小
  *
  *
  * 从数列中挑出一个元素，称为 “基准”（pivot）
