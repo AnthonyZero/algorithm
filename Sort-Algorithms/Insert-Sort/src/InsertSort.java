@@ -43,13 +43,14 @@ public class InsertSort {
         }
         for(int i = 1; i < arr.length; i++) {
 
-            int temp = arr[i]; //待插入的元素
+            int temp = arr[i]; //待插入的元素（这个元素要被移动到前面去，前面已经拍好序，找到位置插入进去）
 
             // 从已经排序的序列最右边的开始比较，找到比其小的数
             int j = i;
             for(; j > 0 && arr[j - 1] > temp; j--) {
-                arr[j] = arr[j - 1];
+                arr[j] = arr[j - 1];//复制 后面的值设置了前面的值，最后插入一个temp 变相的移动了
             }
+            //for循环退出 找到比temp小的位置了j-1 此时arr[j] = temp 排在arr[j-1]元素后面
             arr[j] = temp; //插入
         }
     }
